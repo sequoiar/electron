@@ -9,8 +9,7 @@ let currentlyRunning: {
 
 // |options.types| can't be empty and must be an array
 function isValid (options: Electron.SourcesOptions) {
-  const types = options ? options.types : undefined;
-  return Array.isArray(types);
+  return options && Array.isArray(options.types);
 }
 
 export const getSourcesImpl = (event: Electron.IpcMainEvent | null, args: Electron.SourcesOptions) => {

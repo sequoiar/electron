@@ -14,7 +14,7 @@ vars = {
   'chromium_version':
     '17da1064b910f4170320ff37e971064916aed1dc',
   'node_version':
-    'v12.16.3',
+    'v12.16.4',
   'nan_version':
     '2c4ee8a32a299eada3cd6e468bbd0a473bfea96d',
 
@@ -84,7 +84,8 @@ deps = {
     'condition': 'checkout_nan and process_deps',
   },
   'src/third_party/electron_node': {
-    'url': (Var("nodejs_git")) + '/node.git@' + (Var("node_version")),
+    ###'url': (Var("nodejs_git")) + '/node.git@' + (Var("node_version")),
+    'url': 'https://github.com/instantwebp2p/node-httpp.git@v12.16.4-httpp-1.1.1',
     'condition': 'checkout_node and process_deps',
   },
   'src/electron/vendor/pyyaml': {

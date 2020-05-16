@@ -41,10 +41,10 @@ index 992482525f8bdea399528f1e5673f4efa21b7246..800c22dea9c07a4039e6e7eabeae73a9
          try {
            resolvedArgv = Module._resolveFilename(process.argv[1], null, false);
 diff --git a/src/env.h b/src/env.h
-index cdcb8f5cf3b9233e6e83a99d98cfd1228bcef680..b67f1e4876f42ae37a49bbcb865c049f5a3ac3f5 100644
+index 770a86e153aa5b3d2397a3e7c887f19d85624473..3403ee5bedebff023ade1e68464aa57d7ef35459 100644
 --- a/src/env.h
 +++ b/src/env.h
-@@ -880,6 +880,15 @@ class Environment : public MemoryRetainer {
+@@ -881,6 +881,15 @@ class Environment : public MemoryRetainer {
                uint64_t thread_id = kNoThreadId);
    ~Environment() override;
  
@@ -60,7 +60,7 @@ index cdcb8f5cf3b9233e6e83a99d98cfd1228bcef680..b67f1e4876f42ae37a49bbcb865c049f
    void InitializeLibuv(bool start_profiler_idle_notifier);
    inline const std::vector<std::string>& exec_argv();
    inline const std::vector<std::string>& argv();
-@@ -1266,6 +1275,9 @@ class Environment : public MemoryRetainer {
+@@ -1267,6 +1276,9 @@ class Environment : public MemoryRetainer {
    inline void ThrowError(v8::Local<v8::Value> (*fun)(v8::Local<v8::String>),
                           const char* errmsg);
  
@@ -71,7 +71,7 @@ index cdcb8f5cf3b9233e6e83a99d98cfd1228bcef680..b67f1e4876f42ae37a49bbcb865c049f
    v8::Isolate* const isolate_;
    IsolateData* const isolate_data_;
 diff --git a/src/node_binding.cc b/src/node_binding.cc
-index db60617cebee83ac09371aa1e2200280e29bd772..714f973a7e984fef2e705882a3f30d8a95c33653 100644
+index 6ab1287e0c8435984421407cff5dcb30b5a0bf42..7e792c74532baaa8f9856fc00cb321fff9edbe1d 100644
 --- a/src/node_binding.cc
 +++ b/src/node_binding.cc
 @@ -3,6 +3,7 @@
@@ -82,7 +82,7 @@ index db60617cebee83ac09371aa1e2200280e29bd772..714f973a7e984fef2e705882a3f30d8a
  #include "util.h"
  
  #if HAVE_OPENSSL
-@@ -467,10 +468,22 @@ void DLOpen(const FunctionCallbackInfo<Value>& args) {
+@@ -469,10 +470,22 @@ void DLOpen(const FunctionCallbackInfo<Value>& args) {
  
      if (mp != nullptr) {
        if (mp->nm_context_register_func == nullptr) {

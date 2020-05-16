@@ -1,0 +1,35 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: tom zhou <iwebpp@gmail.com>
+Date: Sat, 16 May 2020 10:41:05 +0800
+Subject: httpp_enable_exceptions
+
+
+diff --git a/deps/uv/BUILD.gn b/deps/uv/BUILD.gn
+index 48b5ae949c44c724bfa08af9f04b6c0f68318d8c..c7fe22a74577c00db313ad48de4d1dc95ec6a57c 100644
+--- a/deps/uv/BUILD.gn
++++ b/deps/uv/BUILD.gn
+@@ -1,5 +1,5 @@
+ config("libuv_config") {
+-  include_dirs = [ "include" ]
++  include_dirs = [ "include", "uvudt" ]
+ 
+   defines = []
+ 
+@@ -31,6 +31,8 @@ static_library("uv") {
+ 
+   defines = []
+ 
++  configs -= [ "//build/config/compiler:no_exceptions" ]
++
+   # This only has an effect on Windows, where it will cause libuv's symbols to be exported in node.lib
+   defines += [ "BUILDING_UV_SHARED=1" ]
+ 
+@@ -44,7 +46,7 @@ static_library("uv") {
+     "-Wno-switch",
+     "-Wno-unused-function",
+     "-Wno-unused-variable",
+-    "-Wno-unreachable-code",
++    "-Wno-unreachable-code"
+   ]
+ 
+   libs = []

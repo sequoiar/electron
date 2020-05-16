@@ -19,10 +19,10 @@ index 626cebabd8c9ea13410a61286e902e0b0986257b..7f1ea84a768baa0d22351456600fef20
    unsigned int active_handles;
    void* handle_queue[2];
 diff --git a/deps/uv/src/unix/core.c b/deps/uv/src/unix/core.c
-index 04999dce36d19383fc574a6c061b7b4d0c46f6dc..f8c523cde05fcf440423e1865920b75ad9e633a2 100644
+index a62e13a922648b242f2e07d4c7e9bd90ee68f674..cb9c2178ae694b4ce60edee0b68969f36146377c 100644
 --- a/deps/uv/src/unix/core.c
 +++ b/deps/uv/src/unix/core.c
-@@ -899,8 +899,11 @@ void uv__io_start(uv_loop_t* loop, uv__io_t* w, unsigned int events) {
+@@ -900,8 +900,11 @@ void uv__io_start(uv_loop_t* loop, uv__io_t* w, unsigned int events) {
      return;
  #endif
  
@@ -35,7 +35,7 @@ index 04999dce36d19383fc574a6c061b7b4d0c46f6dc..f8c523cde05fcf440423e1865920b75a
  
    if (loop->watchers[w->fd] == NULL) {
      loop->watchers[w->fd] = w;
-@@ -936,8 +939,11 @@ void uv__io_stop(uv_loop_t* loop, uv__io_t* w, unsigned int events) {
+@@ -937,8 +940,11 @@ void uv__io_stop(uv_loop_t* loop, uv__io_t* w, unsigned int events) {
        w->events = 0;
      }
    }
@@ -48,7 +48,7 @@ index 04999dce36d19383fc574a6c061b7b4d0c46f6dc..f8c523cde05fcf440423e1865920b75a
  }
  
  
-@@ -954,6 +960,8 @@ void uv__io_close(uv_loop_t* loop, uv__io_t* w) {
+@@ -955,6 +961,8 @@ void uv__io_close(uv_loop_t* loop, uv__io_t* w) {
  void uv__io_feed(uv_loop_t* loop, uv__io_t* w) {
    if (QUEUE_EMPTY(&w->pending_queue))
      QUEUE_INSERT_TAIL(&loop->pending_queue, &w->pending_queue);

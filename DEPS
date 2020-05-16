@@ -151,6 +151,20 @@ hooks = [
       'import os, subprocess; os.chdir(os.path.join("src", "electron", "vendor", "requests")); subprocess.check_call(["python", "setup.py", "build"]);',
     ],
   },
+  {
+    'name': 'setup_node_httpp_submodule',
+    'pattern': 'src/third_party/electron_node',
+    'condition': 'checkout_node and process_deps',
+    'action': [
+      'git',
+      '-C',
+      'src/third_party/electron_node',
+      'submodule',
+      'update',
+      '--init',
+      '--recursive',
+    ],
+  },
 ]
 
 recursedeps = [

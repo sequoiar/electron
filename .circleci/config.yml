@@ -2434,7 +2434,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - httpp
                 - *chromium-upgrade-branches
     jobs:
       - linux-checkout-fast
@@ -2483,7 +2483,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - httpp
                 - *chromium-upgrade-branches
     jobs:
       - mac-checkout-fast
@@ -2528,7 +2528,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - httpp
                 - *chromium-upgrade-branches
     jobs:
       - linux-checkout-for-native-tests

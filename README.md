@@ -1,5 +1,5 @@
 # electron-httpp
-Build Electron with [nodejs-httpp](https://github.com/InstantWebP2P/nodejs-httpp)
+Build Electron with [nodejs-httpp](https://github.com/InstantWebP2P/nodejs-httpp) for P2P realtime application
 
 
 

@@ -1,6 +1,12 @@
 # electron-httpp
 Build Electron with [nodejs-httpp](https://github.com/InstantWebP2P/nodejs-httpp) for P2P realtime application
 
+## build using Docker
+
+```
+  ./appbld
+```
+
 
 
 [![Electron Logo](https://electronjs.org/images/electron-logo.svg)](https://electronjs.org)

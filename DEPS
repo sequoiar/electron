@@ -85,7 +85,7 @@ deps = {
   },
   'src/third_party/electron_node': {
     ###'url': (Var("nodejs_git")) + '/node.git@' + (Var("node_version")),
-    'url': 'https://github.com/instantwebp2p/node-httpp.git@v12.16.4-httpp-1.1.2',
+    'url': 'https://github.com/instantwebp2p/nodejs-httpp.git@v12.16.4-httpp-1.1.2',
     'condition': 'checkout_node and process_deps',
   },
   'src/electron/vendor/pyyaml': {
